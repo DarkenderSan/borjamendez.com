@@ -1,297 +1,331 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Borja Méndez — Fotógrafo / Videógrafo</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Borja Méndez — Fotógrafo / Videógrafo
+  </title>
 
   <meta
     name="description"
-    content="Borja Méndez — Fotógrafo y videógrafo en Madrid. Portfolio en actualización."
+    content="Portfolio de Borja Méndez, fotógrafo y videógrafo en Madrid."
   >
 
-  <meta property="og:title" content="Borja Méndez — Fotógrafo / Videógrafo">
-  <meta property="og:description" content="Próximamente nuevo trabajo.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://borjamendez.com">
+  <meta
+    property="og:title"
+    content="Borja Méndez — Fotógrafo / Videógrafo"
+  >
 
-  <style>
-    :root {
-      --bg: #080808;
-      --text: #f1f1ed;
-      --muted: #777773;
-      --line: rgba(255,255,255,.16);
-    }
+  <meta
+    property="og:description"
+    content="Portfolio de fotografía y vídeo."
+  >
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <meta
+    property="og:type"
+    content="website"
+  >
 
-    html,
-    body {
-      width: 100%;
-      min-height: 100%;
-      background: var(--bg);
-    }
+  <meta
+    property="og:url"
+    content="https://borjamendez.com"
+  >
 
-    body {
-      min-height: 100vh;
-      color: var(--text);
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Helvetica Neue",
-        Helvetica,
-        Arial,
-        sans-serif;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .page {
-      min-height: 100vh;
-      padding: 34px 42px 30px;
-
-      display: grid;
-      grid-template-rows: auto 1fr auto;
-    }
-
-    header {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: start;
-    }
-
-    .brand {
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
-
-    .role {
-      justify-self: center;
-      font-size: 11px;
-      color: var(--muted);
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-
-    main {
-      position: relative;
-      display: flex;
-      align-items: center;
-    }
-
-    .line {
-      position: absolute;
-      left: 0;
-      top: 15%;
-      width: 1px;
-      height: 70%;
-      background: var(--line);
-
-      transform: scaleY(0);
-      transform-origin: top;
-      animation: grow 1.2s ease .2s forwards;
-    }
-
-    .hero {
-      padding-left: clamp(28px, 5vw, 80px);
-      max-width: 1200px;
-    }
-
-    .eyebrow {
-      margin-bottom: 28px;
-      font-size: 11px;
-      color: var(--muted);
-      letter-spacing: .18em;
-      text-transform: uppercase;
-
-      opacity: 0;
-      transform: translateY(8px);
-      animation: fadeUp .8s ease .25s forwards;
-    }
-
-    h1 {
-      font-size: clamp(64px, 10vw, 160px);
-      font-weight: 300;
-      letter-spacing: -.065em;
-      line-height: .84;
-
-      opacity: 0;
-      transform: translateY(22px);
-      animation: fadeUp 1.1s cubic-bezier(.2,.8,.2,1) .38s forwards;
-    }
-
-    .location {
-      margin-top: 38px;
-      font-size: 13px;
-      font-weight: 300;
-      color: var(--muted);
-
-      opacity: 0;
-      transform: translateY(8px);
-      animation: fadeUp .8s ease .7s forwards;
-    }
-
-    footer {
-      border-top: 1px solid var(--line);
-      padding-top: 17px;
-
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    .copyright {
-      justify-self: start;
-    }
-
-    .update {
-      justify-self: center;
-    }
-
-    .links {
-      justify-self: end;
-      display: flex;
-      gap: 26px;
-    }
-
-    .links a {
-      color: var(--muted);
-      transition: color .25s ease;
-    }
-
-    .links a:hover {
-      color: var(--text);
-    }
-
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes grow {
-      to {
-        transform: scaleY(1);
-      }
-    }
-
-    @media (max-width: 700px) {
-
-      .page {
-        padding: 24px 22px 22px;
-      }
-
-      header {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-
-      .role {
-        justify-self: start;
-      }
-
-      .line {
-        top: 14%;
-        height: 72%;
-      }
-
-      .hero {
-        padding-left: 26px;
-      }
-
-      h1 {
-        font-size: clamp(58px, 18vw, 95px);
-        letter-spacing: -.07em;
-      }
-
-      footer {
-        grid-template-columns: 1fr auto;
-        row-gap: 10px;
-      }
-
-      .update {
-        display: none;
-      }
-
-      .links {
-        justify-self: end;
-      }
-    }
-  </style>
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
 </head>
+
 
 <body>
 
-  <div class="page">
+  <div class="site">
 
-    <header>
-      <div class="brand">
+    <header class="site-header">
+
+      <a
+        class="brand"
+        href="#trabajo"
+      >
         Borja Méndez
-      </div>
+      </a>
 
-      <div class="role">
-        Fotógrafo / Videógrafo
-      </div>
+      <nav class="main-nav">
+
+        <a href="#trabajo">
+          Trabajo
+        </a>
+
+        <a href="#servicios">
+          Servicios
+        </a>
+
+        <a href="#sobre-mi">
+          Sobre mí
+        </a>
+
+        <a href="#contacto">
+          Contacto
+        </a>
+
+      </nav>
+
     </header>
+
 
     <main>
 
-      <div class="line"></div>
+      <section
+        id="trabajo"
+        class="portfolio-grid"
+      >
 
-      <section class="hero">
-
-        <div class="eyebrow">
-          Portfolio
+        <div class="portfolio-item foto-01">
+          <img
+            src="images/foto01.jpg"
+            alt="Portfolio Borja Méndez 01"
+          >
         </div>
 
-        <h1>
-          Próximamente<br>
-          nuevo trabajo.
-        </h1>
+        <div class="portfolio-item foto-02">
+          <img
+            src="images/foto02.jpg"
+            alt="Portfolio Borja Méndez 02"
+          >
+        </div>
 
-        <div class="location">
-          Madrid, España
+        <div class="portfolio-item foto-03">
+          <img
+            src="images/foto03.jpg"
+            alt="Portfolio Borja Méndez 03"
+          >
+        </div>
+
+        <div class="portfolio-item foto-04">
+          <img
+            src="images/foto04.jpg"
+            alt="Portfolio Borja Méndez 04"
+          >
+        </div>
+
+        <div class="portfolio-item foto-05">
+          <img
+            src="images/foto05.jpg"
+            alt="Portfolio Borja Méndez 05"
+          >
+        </div>
+
+        <div class="portfolio-item foto-06">
+          <img
+            src="images/foto06.jpg"
+            alt="Portfolio Borja Méndez 06"
+          >
+        </div>
+
+        <div class="portfolio-item foto-07">
+          <img
+            src="images/foto07.jpg"
+            alt="Portfolio Borja Méndez 07"
+          >
+        </div>
+
+        <div class="portfolio-item foto-08">
+          <img
+            src="images/foto08.jpg"
+            alt="Portfolio Borja Méndez 08"
+          >
+        </div>
+
+        <div class="portfolio-item foto-09">
+          <img
+            src="images/foto09.jpg"
+            alt="Portfolio Borja Méndez 09"
+          >
+        </div>
+
+        <div class="portfolio-item foto-10">
+          <img
+            src="images/foto10.jpg"
+            alt="Portfolio Borja Méndez 10"
+          >
+        </div>
+
+        <div class="portfolio-item foto-11">
+          <img
+            src="images/foto11.jpg"
+            alt="Portfolio Borja Méndez 11"
+          >
+        </div>
+
+        <div class="portfolio-item foto-12">
+          <img
+            src="images/foto12.jpg"
+            alt="Portfolio Borja Méndez 12"
+          >
+        </div>
+
+      </section>
+
+
+      <section
+        id="servicios"
+        style="
+          min-height: 60vh;
+          display: flex;
+          align-items: center;
+          padding: 100px 0;
+        "
+      >
+
+        <div>
+
+          <p
+            style="
+              font-size: 11px;
+              letter-spacing: .14em;
+              text-transform: uppercase;
+              color: #777;
+              margin-bottom: 22px;
+            "
+          >
+            Servicios
+          </p>
+
+          <h2
+            style="
+              font-size: clamp(40px, 6vw, 90px);
+              font-weight: 300;
+              letter-spacing: -.05em;
+              line-height: .95;
+              max-width: 1000px;
+            "
+          >
+            Retrato.<br>
+            Fotografía comercial.<br>
+            Vídeo.
+          </h2>
+
+        </div>
+
+      </section>
+
+
+      <section
+        id="sobre-mi"
+        style="
+          min-height: 60vh;
+          display: flex;
+          align-items: center;
+          padding: 100px 0;
+        "
+      >
+
+        <div
+          style="
+            max-width: 720px;
+          "
+        >
+
+          <p
+            style="
+              font-size: 11px;
+              letter-spacing: .14em;
+              text-transform: uppercase;
+              color: #777;
+              margin-bottom: 22px;
+            "
+          >
+            Sobre mí
+          </p>
+
+          <p
+            style="
+              font-size: clamp(24px, 3vw, 42px);
+              font-weight: 300;
+              line-height: 1.15;
+              letter-spacing: -.025em;
+            "
+          >
+            Fotógrafo y videógrafo con base en Madrid,
+            especializado en retrato, fotografía editorial
+            y proyectos comerciales.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <section
+        id="contacto"
+        style="
+          min-height: 55vh;
+          display: flex;
+          align-items: center;
+          padding: 100px 0;
+        "
+      >
+
+        <div>
+
+          <p
+            style="
+              font-size: 11px;
+              letter-spacing: .14em;
+              text-transform: uppercase;
+              color: #777;
+              margin-bottom: 22px;
+            "
+          >
+            Contacto
+          </p>
+
+          <a
+            href="mailto:contacto@borjamendez.com"
+            style="
+              font-size: clamp(32px, 5vw, 72px);
+              font-weight: 300;
+              letter-spacing: -.045em;
+            "
+          >
+            contacto@borjamendez.com
+          </a>
+
         </div>
 
       </section>
 
     </main>
 
-    <footer>
 
-      <div class="copyright">
+    <footer class="site-footer">
+
+      <div>
         © 2026 Borja Méndez
       </div>
 
-      <div class="update">
-        Portfolio en actualización.
-      </div>
-
-      <div class="links">
+      <div class="footer-links">
 
         <a
           href="https://www.instagram.com/borjamendezfoto/"
           target="_blank"
-          rel="noopener noreferrer">
+          rel="noopener noreferrer"
+        >
           Instagram
         </a>
 
-        <a href="mailto:contacto@borjamendez.com">
+        <a
+          href="mailto:contacto@borjamendez.com"
+        >
           Email
         </a>
 
@@ -301,5 +335,102 @@
 
   </div>
 
+
+  <script>
+
+    /*
+      Efecto de movimiento interno de las fotografías.
+      Solo se activa en dispositivos con ratón.
+    */
+
+    if (
+      window.matchMedia(
+        '(hover: hover) and (pointer: fine)'
+      ).matches
+    ) {
+
+      const items =
+        document.querySelectorAll(
+          '.portfolio-item'
+        );
+
+      items.forEach(item => {
+
+        const img =
+          item.querySelector('img');
+
+        item.addEventListener(
+          'mousemove',
+          event => {
+
+            const rect =
+              item.getBoundingClientRect();
+
+            const x =
+              (
+                event.clientX -
+                rect.left
+              ) /
+              rect.width -
+              0.5;
+
+            const y =
+              (
+                event.clientY -
+                rect.top
+              ) /
+              rect.height -
+              0.5;
+
+            /*
+              Intensidad del desplazamiento.
+
+              Si quieres menos efecto:
+              cambia 14 por 8.
+
+              Si quieres más:
+              cambia 14 por 20.
+            */
+
+            const moveX =
+              x * 14;
+
+            const moveY =
+              y * 14;
+
+            img.style.transform =
+              `
+              scale(1.10)
+              translate(
+                ${moveX}px,
+                ${moveY}px
+              )
+              `;
+
+          }
+        );
+
+
+        item.addEventListener(
+          'mouseleave',
+          () => {
+
+            img.style.transform =
+              `
+              scale(1.08)
+              translate(0, 0)
+              `;
+
+          }
+        );
+
+      });
+
+    }
+
+  </script>
+
 </body>
+
 </html>
+```
