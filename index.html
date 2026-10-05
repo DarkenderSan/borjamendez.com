@@ -6,69 +6,148 @@
 
   <title>Borja Méndez — Photographer / Filmmaker</title>
 
-  <meta name="description" content="Borja Méndez — Photographer / Filmmaker. Website under construction.">
+  <meta name="description" content="Borja Méndez — Photographer / Filmmaker based in Madrid. Website under construction.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Borja Méndez — Photographer / Filmmaker">
+  <meta property="og:description" content="Website under construction.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://borjamendez.com">
 
   <style>
+    :root {
+      --bg: #090909;
+      --text: #f2f2f0;
+      --muted: #8b8b87;
+      --line: rgba(255,255,255,.12);
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-    html,
-    body {
-      width: 100%;
-      height: 100%;
+    html {
+      background: var(--bg);
     }
 
     body {
-      background: #0a0a0a;
-      color: #f2f2f2;
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
-                   Helvetica, Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    main {
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 48px 56px;
+      background: var(--bg);
+      color: var(--text);
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
-    .name {
-      font-size: 16px;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    .center {
-      max-width: 1000px;
+    .page {
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      padding: 34px 42px 30px;
     }
 
-    h1 {
-      font-size: clamp(54px, 9vw, 140px);
-      font-weight: 400;
-      line-height: 0.9;
-      letter-spacing: -0.055em;
-    }
-
-    .subtitle {
-      margin-top: 28px;
-      font-size: clamp(16px, 1.5vw, 22px);
-      font-weight: 300;
-      color: #999;
-    }
-
+    header,
     footer {
       display: flex;
       justify-content: space-between;
-      align-items: flex-end;
-      gap: 30px;
+      align-items: center;
+    }
+
+    .brand {
       font-size: 13px;
-      color: #777;
+      font-weight: 500;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .status {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: .04em;
+    }
+
+    main {
+      display: flex;
+      align-items: center;
+      padding: 60px 0;
+    }
+
+    .hero {
+      max-width: 1100px;
+    }
+
+    .eyebrow {
+      margin-bottom: 24px;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: .16em;
+      text-transform: uppercase;
+
+      opacity: 0;
+      transform: translateY(8px);
+      animation: fadeUp .8s ease .15s forwards;
+    }
+
+    h1 {
+      font-size: clamp(58px, 9vw, 146px);
+      font-weight: 400;
+      line-height: .88;
+      letter-spacing: -.055em;
+      max-width: 1000px;
+
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 1s ease .3s forwards;
+    }
+
+    .subline {
+      margin-top: 34px;
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+
+      opacity: 0;
+      transform: translateY(8px);
+      animation: fadeUp .8s ease .55s forwards;
+    }
+
+    .role {
+      font-size: clamp(15px, 1.2vw, 19px);
+      font-weight: 300;
+      color: #cfcfca;
+    }
+
+    .dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--muted);
+    }
+
+    .location {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      font-size: 12px;
+      color: var(--muted);
     }
 
     .links {
@@ -76,69 +155,101 @@
       gap: 24px;
     }
 
-    a {
-      color: #aaa;
-      text-decoration: none;
-      transition: color 0.25s ease;
+    .links a {
+      transition: color .2s ease;
     }
 
-    a:hover {
-      color: #fff;
+    .links a:hover {
+      color: var(--text);
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @media (max-width: 700px) {
+      .page {
+        padding: 24px 22px 22px;
+      }
+
+      header {
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      .status {
+        text-align: right;
+      }
+
       main {
-        padding: 30px 24px;
+        padding: 50px 0;
+      }
+
+      h1 {
+        font-size: clamp(52px, 17vw, 88px);
+        letter-spacing: -.06em;
+      }
+
+      .subline {
+        margin-top: 26px;
       }
 
       footer {
-        flex-direction: column;
         align-items: flex-start;
+        gap: 20px;
+        flex-direction: column;
       }
     }
   </style>
 </head>
 
 <body>
-
-  <main>
+  <div class="page">
 
     <header>
-      <div class="name">Borja Méndez</div>
+      <div class="brand">Borja Méndez</div>
+      <div class="status">Website under construction</div>
     </header>
 
-    <section class="center">
-      <h1>
-        Website<br>
-        under construction.
-      </h1>
+    <main>
+      <section class="hero">
 
-      <p class="subtitle">
-        Photographer / Filmmaker · Madrid
-      </p>
-    </section>
+        <div class="eyebrow">Coming soon</div>
+
+        <h1>
+          New work<br>
+          coming soon.
+        </h1>
+
+        <div class="subline">
+          <div class="role">Photographer / Filmmaker</div>
+          <div class="dot"></div>
+          <div class="location">Madrid, Spain</div>
+        </div>
+
+      </section>
+    </main>
 
     <footer>
-
-      <div>
-        © 2026 Borja Méndez
-      </div>
+      <div>© 2026 Borja Méndez</div>
 
       <div class="links">
-        <a href="https://www.instagram.com/borjamendezfoto/"
-           target="_blank"
-           rel="noopener noreferrer">
+        <a
+          href="https://www.instagram.com/borjamendezfoto/"
+          target="_blank"
+          rel="noopener noreferrer">
           Instagram
         </a>
 
-        <a href="mailto:contacto@borjamendez.com>
+        <a href="mailto:contacto@borjamendez.com”>
           Email
         </a>
       </div>
-
     </footer>
 
-  </main>
-
+  </div>
 </body>
 </html>
