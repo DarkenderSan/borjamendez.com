@@ -1,0 +1,440 @@
+:root {
+  --bg: #070707;
+  --text: #f2f2ef;
+  --muted: #8a8a86;
+  --line: rgba(255, 255, 255, 0.12);
+
+  --page-x: 28px;
+  --page-y: 24px;
+  --gap: 8px;
+}
+
+/* RESET */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: var(--bg);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* PAGE */
+
+.site {
+  min-height: 100vh;
+  padding:
+    var(--page-y)
+    var(--page-x)
+    40px;
+}
+
+/* HEADER */
+
+.site-header {
+  position: relative;
+  z-index: 20;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+
+  margin-bottom: 28px;
+}
+
+.brand {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.main-nav a {
+  position: relative;
+  color: rgba(255, 255, 255, 0.72);
+  transition: color 0.25s ease;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  bottom: -5px;
+
+  width: 100%;
+  height: 1px;
+
+  background: currentColor;
+
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.main-nav a:hover {
+  color: #fff;
+}
+
+.main-nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* PORTFOLIO GRID */
+
+.portfolio-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: var(--gap);
+
+  width: 100%;
+}
+
+/* FRAME */
+
+.portfolio-item {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 4 / 5;
+
+  overflow: hidden;
+  background: #111;
+
+  cursor: default;
+}
+
+/* IMAGE */
+
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  /*
+    Escala ligeramente superior a 1 para que
+    el desplazamiento interior nunca deje
+    ver los bordes del contenedor.
+  */
+  transform: scale(1.08);
+
+  transition:
+    transform 0.45s cubic-bezier(.2, .8, .2, 1),
+    filter 0.4s ease;
+
+  will-change: transform;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* HOVER */
+
+.portfolio-item:hover img {
+  filter: brightness(1.025);
+}
+
+/*
+  IMPORTANTE:
+  El movimiento real de cada imagen
+  lo controla JavaScript modificando transform.
+
+  Ejemplo:
+  scale(1.1) translate(6px, -4px)
+*/
+
+/* NUMERACIÓN OPCIONAL */
+
+.portfolio-number {
+  position: absolute;
+
+  left: 14px;
+  bottom: 12px;
+
+  z-index: 3;
+
+  font-size: 11px;
+  font-weight: 400;
+
+  letter-spacing: 0.08em;
+
+  color: rgba(255, 255, 255, 0.85);
+
+  pointer-events: none;
+}
+
+/* SOMBRA MUY SUAVE PARA TEXTO */
+
+.portfolio-item::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.15),
+      transparent 30%
+    );
+
+  pointer-events: none;
+
+  opacity: 0.45;
+}
+
+/* POSICIÓN INDIVIDUAL DE CADA FOTO */
+
+/*
+  Puedes ajustar estos valores una por una.
+
+  50% 50% = centro
+  50% 35% = desplaza el encuadre hacia arriba
+  50% 70% = desplaza el encuadre hacia abajo
+  35% 50% = muestra más la izquierda
+  70% 50% = muestra más la derecha
+*/
+
+.foto-01 img {
+  object-position: 50% 45%;
+}
+
+.foto-02 img {
+  object-position: 50% 50%;
+}
+
+.foto-03 img {
+  object-position: 50% 54%;
+}
+
+.foto-04 img {
+  object-position: 50% 50%;
+}
+
+.foto-05 img {
+  object-position: 50% 42%;
+}
+
+.foto-06 img {
+  object-position: 50% 50%;
+}
+
+.foto-07 img {
+  object-position: 50% 48%;
+}
+
+.foto-08 img {
+  object-position: 50% 44%;
+}
+
+.foto-09 img {
+  object-position: 50% 46%;
+}
+
+.foto-10 img {
+  object-position: 50% 48%;
+}
+
+.foto-11 img {
+  object-position: 50% 55%;
+}
+
+.foto-12 img {
+  object-position: 50% 42%;
+}
+
+/* FOOTER */
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 30px;
+
+  margin-top: 34px;
+  padding-top: 16px;
+
+  border-top: 1px solid var(--line);
+
+  font-size: 11px;
+  color: var(--muted);
+
+  letter-spacing: 0.05em;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-links a {
+  transition: color 0.25s ease;
+}
+
+.footer-links a:hover {
+  color: var(--text);
+}
+
+/* TABLET */
+
+@media (max-width: 1100px) {
+  :root {
+    --page-x: 20px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .main-nav {
+    gap: 22px;
+  }
+}
+
+/* MÓVIL */
+
+@media (max-width: 760px) {
+  :root {
+    --page-x: 14px;
+    --page-y: 18px;
+    --gap: 5px;
+  }
+
+  .site-header {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .brand {
+    margin-bottom: 18px;
+  }
+
+  .main-nav {
+    width: 100%;
+
+    justify-content: space-between;
+
+    gap: 14px;
+
+    font-size: 10px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .portfolio-item {
+    aspect-ratio: 4 / 5;
+  }
+
+  .portfolio-number {
+    left: 9px;
+    bottom: 8px;
+
+    font-size: 9px;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 12px;
+
+    margin-top: 24px;
+  }
+}
+
+/* MÓVIL MUY PEQUEÑO */
+
+@media (max-width: 420px) {
+  .main-nav {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    row-gap: 8px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-item {
+    aspect-ratio: 4 / 5;
+  }
+}
+
+/* SIN EFECTOS DE MOVIMIENTO */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .portfolio-item img,
+  .main-nav a,
+  .main-nav a::after,
+  .footer-links a {
+    transition: none;
+  }
+
+  .portfolio-item img {
+    transform: scale(1.02) !important;
+  }
+}
+
+/* DESACTIVAR EFECTO EN DISPOSITIVOS SIN RATÓN */
+
+@media (hover: none), (pointer: coarse) {
+  .portfolio-item img {
+    transform: scale(1.03) !important;
+  }
+
+  .portfolio-item:hover img {
+    filter: none;
+  }
+}
