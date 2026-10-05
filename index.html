@@ -4,37 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Borja Méndez — Photographer / Filmmaker</title>
+  <title>Borja Méndez — Fotógrafo / Videógrafo</title>
 
-  <meta name="description" content="Borja Méndez — Photographer / Filmmaker based in Madrid. Website under construction.">
+  <meta
+    name="description"
+    content="Borja Méndez — Fotógrafo y videógrafo en Madrid. Portfolio en actualización."
+  >
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Borja Méndez — Photographer / Filmmaker">
-  <meta property="og:description" content="Website under construction.">
+  <meta property="og:title" content="Borja Méndez — Fotógrafo / Videógrafo">
+  <meta property="og:description" content="Próximamente nuevo trabajo.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://borjamendez.com">
 
   <style>
     :root {
-      --bg: #090909;
-      --text: #f2f2f0;
-      --muted: #8b8b87;
-      --line: rgba(255,255,255,.12);
+      --bg: #080808;
+      --text: #f1f1ed;
+      --muted: #777773;
+      --line: rgba(255,255,255,.16);
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
-    html {
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
       background: var(--bg);
     }
 
     body {
       min-height: 100vh;
-      background: var(--bg);
       color: var(--text);
       font-family:
         -apple-system,
@@ -54,109 +58,119 @@
 
     .page {
       min-height: 100vh;
+      padding: 34px 42px 30px;
+
       display: grid;
       grid-template-rows: auto 1fr auto;
-      padding: 34px 42px 30px;
     }
 
-    header,
-    footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
     }
 
     .brand {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 500;
       letter-spacing: .18em;
       text-transform: uppercase;
     }
 
-    .status {
-      font-size: 12px;
+    .role {
+      justify-self: center;
+      font-size: 11px;
       color: var(--muted);
-      letter-spacing: .04em;
+      letter-spacing: .14em;
+      text-transform: uppercase;
     }
 
     main {
+      position: relative;
       display: flex;
       align-items: center;
-      padding: 60px 0;
+    }
+
+    .line {
+      position: absolute;
+      left: 0;
+      top: 15%;
+      width: 1px;
+      height: 70%;
+      background: var(--line);
+
+      transform: scaleY(0);
+      transform-origin: top;
+      animation: grow 1.2s ease .2s forwards;
     }
 
     .hero {
-      max-width: 1100px;
+      padding-left: clamp(28px, 5vw, 80px);
+      max-width: 1200px;
     }
 
     .eyebrow {
-      margin-bottom: 24px;
-      font-size: 12px;
+      margin-bottom: 28px;
+      font-size: 11px;
       color: var(--muted);
-      letter-spacing: .16em;
+      letter-spacing: .18em;
       text-transform: uppercase;
 
       opacity: 0;
       transform: translateY(8px);
-      animation: fadeUp .8s ease .15s forwards;
+      animation: fadeUp .8s ease .25s forwards;
     }
 
     h1 {
-      font-size: clamp(58px, 9vw, 146px);
-      font-weight: 400;
-      line-height: .88;
-      letter-spacing: -.055em;
-      max-width: 1000px;
-
-      opacity: 0;
-      transform: translateY(16px);
-      animation: fadeUp 1s ease .3s forwards;
-    }
-
-    .subline {
-      margin-top: 34px;
-      display: flex;
-      gap: 18px;
-      align-items: center;
-      flex-wrap: wrap;
-
-      opacity: 0;
-      transform: translateY(8px);
-      animation: fadeUp .8s ease .55s forwards;
-    }
-
-    .role {
-      font-size: clamp(15px, 1.2vw, 19px);
+      font-size: clamp(64px, 10vw, 160px);
       font-weight: 300;
-      color: #cfcfca;
-    }
+      letter-spacing: -.065em;
+      line-height: .84;
 
-    .dot {
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: var(--muted);
+      opacity: 0;
+      transform: translateY(22px);
+      animation: fadeUp 1.1s cubic-bezier(.2,.8,.2,1) .38s forwards;
     }
 
     .location {
-      font-size: 14px;
+      margin-top: 38px;
+      font-size: 13px;
+      font-weight: 300;
       color: var(--muted);
+
+      opacity: 0;
+      transform: translateY(8px);
+      animation: fadeUp .8s ease .7s forwards;
     }
 
     footer {
       border-top: 1px solid var(--line);
-      padding-top: 18px;
-      font-size: 12px;
+      padding-top: 17px;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      font-size: 11px;
       color: var(--muted);
     }
 
+    .copyright {
+      justify-self: start;
+    }
+
+    .update {
+      justify-self: center;
+    }
+
     .links {
+      justify-self: end;
       display: flex;
-      gap: 24px;
+      gap: 26px;
     }
 
     .links a {
-      transition: color .2s ease;
+      color: var(--muted);
+      transition: color .25s ease;
     }
 
     .links a:hover {
@@ -170,73 +184,106 @@
       }
     }
 
+    @keyframes grow {
+      to {
+        transform: scaleY(1);
+      }
+    }
+
     @media (max-width: 700px) {
+
       .page {
         padding: 24px 22px 22px;
       }
 
       header {
-        align-items: flex-start;
-        gap: 20px;
+        grid-template-columns: 1fr;
+        gap: 10px;
       }
 
-      .status {
-        text-align: right;
+      .role {
+        justify-self: start;
       }
 
-      main {
-        padding: 50px 0;
+      .line {
+        top: 14%;
+        height: 72%;
+      }
+
+      .hero {
+        padding-left: 26px;
       }
 
       h1 {
-        font-size: clamp(52px, 17vw, 88px);
-        letter-spacing: -.06em;
-      }
-
-      .subline {
-        margin-top: 26px;
+        font-size: clamp(58px, 18vw, 95px);
+        letter-spacing: -.07em;
       }
 
       footer {
-        align-items: flex-start;
-        gap: 20px;
-        flex-direction: column;
+        grid-template-columns: 1fr auto;
+        row-gap: 10px;
+      }
+
+      .update {
+        display: none;
+      }
+
+      .links {
+        justify-self: end;
       }
     }
   </style>
 </head>
 
 <body>
+
   <div class="page">
 
     <header>
-      <div class="brand">Borja Méndez</div>
-      <div class="status">Website under construction</div>
+      <div class="brand">
+        Borja Méndez
+      </div>
+
+      <div class="role">
+        Fotógrafo / Videógrafo
+      </div>
     </header>
 
     <main>
+
+      <div class="line"></div>
+
       <section class="hero">
 
-        <div class="eyebrow">Coming soon</div>
+        <div class="eyebrow">
+          Portfolio
+        </div>
 
         <h1>
-          New work<br>
-          coming soon.
+          Próximamente<br>
+          nuevo trabajo.
         </h1>
 
-        <div class="subline">
-          <div class="role">Photographer / Filmmaker</div>
-          <div class="dot"></div>
-          <div class="location">Madrid, Spain</div>
+        <div class="location">
+          Madrid, España
         </div>
 
       </section>
+
     </main>
 
     <footer>
-      <div>© 2026 Borja Méndez</div>
+
+      <div class="copyright">
+        © 2026 Borja Méndez
+      </div>
+
+      <div class="update">
+        Portfolio en actualización.
+      </div>
 
       <div class="links">
+
         <a
           href="https://www.instagram.com/borjamendezfoto/"
           target="_blank"
@@ -244,12 +291,15 @@
           Instagram
         </a>
 
-        <a href="mailto:contacto@borjamendez.com”>
+        <a href="mailto:contacto@borjamendez.com">
           Email
         </a>
+
       </div>
+
     </footer>
 
   </div>
+
 </body>
 </html>
