@@ -41,7 +41,7 @@
 
   <link
     rel="stylesheet"
-    href="style.css"
+    href="/style.css?v=5"
   >
 </head>
 
@@ -91,84 +91,84 @@
 
         <div class="portfolio-item foto-01">
           <img
-            src="images/foto01.jpg"
+            src="/images/foto01.jpg"
             alt="Portfolio Borja Méndez 01"
           >
         </div>
 
         <div class="portfolio-item foto-02">
           <img
-            src="images/foto02.jpg"
+            src="/images/foto02.jpg"
             alt="Portfolio Borja Méndez 02"
           >
         </div>
 
         <div class="portfolio-item foto-03">
           <img
-            src="images/foto03.jpg"
+            src="/images/foto03.jpg"
             alt="Portfolio Borja Méndez 03"
           >
         </div>
 
         <div class="portfolio-item foto-04">
           <img
-            src="images/foto04.jpg"
+            src="/images/foto04.jpg"
             alt="Portfolio Borja Méndez 04"
           >
         </div>
 
         <div class="portfolio-item foto-05">
           <img
-            src="images/foto05.jpg"
+            src="/images/foto05.jpg"
             alt="Portfolio Borja Méndez 05"
           >
         </div>
 
         <div class="portfolio-item foto-06">
           <img
-            src="images/foto06.jpg"
+            src="/images/foto06.jpg"
             alt="Portfolio Borja Méndez 06"
           >
         </div>
 
         <div class="portfolio-item foto-07">
           <img
-            src="images/foto07.jpg"
+            src="/images/foto07.jpg"
             alt="Portfolio Borja Méndez 07"
           >
         </div>
 
         <div class="portfolio-item foto-08">
           <img
-            src="images/foto08.jpg"
+            src="/images/foto08.jpg"
             alt="Portfolio Borja Méndez 08"
           >
         </div>
 
         <div class="portfolio-item foto-09">
           <img
-            src="images/foto09.jpg"
+            src="/images/foto09.jpg"
             alt="Portfolio Borja Méndez 09"
           >
         </div>
 
         <div class="portfolio-item foto-10">
           <img
-            src="images/foto10.jpg"
+            src="/images/foto10.jpg"
             alt="Portfolio Borja Méndez 10"
           >
         </div>
 
         <div class="portfolio-item foto-11">
           <img
-            src="images/foto11.jpg"
+            src="/images/foto11.jpg"
             alt="Portfolio Borja Méndez 11"
           >
         </div>
 
         <div class="portfolio-item foto-12">
           <img
-            src="images/foto12.jpg"
+            src="/images/foto12.jpg"
             alt="Portfolio Borja Méndez 12"
           >
         </div>
@@ -176,58 +176,85 @@
       </section>
 
 
-     <section id="servicios" class="services-section">
+      <section
+        id="servicios"
+        class="services-section"
+      >
 
-  <div class="section-label">
-    Servicios
-  </div>
+        <div class="section-label">
+          Servicios
+        </div>
 
-  <div class="services-list">
+        <div class="services-list">
 
-    <article class="service-item">
-      <div class="service-number">01</div>
+          <article class="service-item">
 
-      <div class="service-content">
-        <h2>Retrato</h2>
+            <div class="service-number">
+              01
+            </div>
 
-        <p>
-          Retrato editorial, personal y corporativo.
-          Sesiones en estudio o localización.
-        </p>
-      </div>
-    </article>
+            <div class="service-content">
 
+              <h2>
+                Retrato
+              </h2>
 
-    <article class="service-item">
-      <div class="service-number">02</div>
+              <p>
+                Retrato editorial, personal y corporativo.
+                Sesiones en estudio o localización.
+              </p>
 
-      <div class="service-content">
-        <h2>Fotografía comercial</h2>
+            </div>
 
-        <p>
-          Imagen para marcas, empresas y campañas.
-          Producciones adaptadas a cada proyecto.
-        </p>
-      </div>
-    </article>
+          </article>
 
 
-    <article class="service-item">
-      <div class="service-number">03</div>
+          <article class="service-item">
 
-      <div class="service-content">
-        <h2>Vídeo</h2>
+            <div class="service-number">
+              02
+            </div>
 
-        <p>
-          Contenido audiovisual para marcas,
-          campañas, producto y comunicación.
-        </p>
-      </div>
-    </article>
+            <div class="service-content">
 
-  </div>
+              <h2>
+                Fotografía comercial
+              </h2>
 
-</section>
+              <p>
+                Imagen para marcas, empresas y campañas.
+                Producciones adaptadas a cada proyecto.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="service-item">
+
+            <div class="service-number">
+              03
+            </div>
+
+            <div class="service-content">
+
+              <h2>
+                Vídeo
+              </h2>
+
+              <p>
+                Contenido audiovisual para marcas,
+                campañas, producto y comunicación.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </section>
 
 
       <section
@@ -349,11 +376,6 @@
 
   <script>
 
-    /*
-      Efecto de movimiento interno de las fotografías.
-      Solo se activa en dispositivos con ratón.
-    */
-
     if (
       window.matchMedia(
         '(hover: hover) and (pointer: fine)'
@@ -392,16 +414,6 @@
               ) /
               rect.height -
               0.5;
-
-            /*
-              Intensidad del desplazamiento.
-
-              Si quieres menos efecto:
-              cambia 14 por 8.
-
-              Si quieres más:
-              cambia 14 por 20.
-            */
 
             const moveX =
               x * 14;
